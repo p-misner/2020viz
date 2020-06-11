@@ -1,0 +1,46 @@
+<!DOCTYPE>
+
+<html>
+	<head>
+		<title> Death by Horse Kick </title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+
+		<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<h1> <span>D</span>eath by Horsekick</h1>
+		<h2>demonstrating the poisson distribution with data from the prussian army </h2>
+
+		<p>In 1880, four soldiers from the eleventh army corp died from being kicked in the head while most army corps had zero or one soldiers dying from horse kick. Two years later, the twelfth army corp had four soldiers di ed despite none dying the year before. Was something nefarious going on or did the eleventh army corp have supremely bad luck? The answers lies in the poisson distribution </p>
+
+		<p> TABLE </p>
+
+		<p>Graphing the deaths per corp and per year, there doesn’t seem to be any pattern in which corp has the most deaths via horsekick. Death by horsekick is an exceedingly rare event but with the number of soliders and horses in the prussian army it’s bound to happen from time to time. How can we tell  if the number of  deaths via horse kick are typical?
+		</p>
+
+		<div id="density"> </div>
+		<div id="densityv2"></div>
+
+		<p> The poisson distribution  can be used to characterize discrete, rare events over a specified time interval and can be described by:</p>
+
+		<p> EQUATION <p>
+
+		<p> where lamda =avg num of events per interval , k = number of time events occur, and e = Euler’s number (2.71828...). Given that one soldier dying by horse kick is (hopefully) independent of another soldier dying, this data set matches the criteria for a poisson distrubtion. </p>
+
+		<div id="scatter"> </div>
+
+
+		<h2> Works Cited </h2>
+
+<script src="./prussiangraphs.js"></script>
+<script src="./scatterplot.js"></script>
+
+	</body>
+
+</html>
