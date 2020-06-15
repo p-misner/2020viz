@@ -1,0 +1,90 @@
+
+<!-- <html>
+  <head>
+    <title> Area</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+
+  </head>
+  <body>
+    <svg id="map01"></svg>
+
+
+    <script>
+
+      var width = 1000;
+      var height = 600;
+
+
+      var projection = d3.geo.albersUsa()
+        .translate([width/2, height/2])
+        .scale([1000]);
+      var path = d3.geo.path()
+         .projection(projection);
+
+
+      console.log("hi");
+
+    </script>
+  </body>
+
+  <style>
+    #map01 {
+      height: 600px;
+      width: 1000px;
+      background-color: lightcyan;
+    }
+
+
+  </style>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <svg width="960" height="600" stroke="#fff" stroke-linejoin="round" stroke-linecap="round"></svg>
+  </body>
+
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3"></script>
+  <script>
+    //specify projection
+    var path = d3.geo.path().projection(d3.geo.albersUsa());
+
+    //load in data
+   d3.json("states.json",function(error, us){
+
+     var map = d3.select("svg").selectAll("path")
+        .data(us.features) //bind geoJson data to path
+        .enter()
+        .append("path")
+        .attr("d",path)
+        .on("mouseover",function(e){d3.select(this).style("opacity", "0.9")})
+        .on("mouseover",function(e){d3.select(this).style("fill", "#0e1c01")})
+        .on("mouseout", function(e) {d3.select(this).style("opacity","1")})
+        .on("mouseout", function(e) {d3.select(this).style("fill","#000000")})
+
+    });
+    //^ at this point map should be created
+
+    var color = d3.scale.quantize()
+              .range(["rgb(237,248,233)", "rgb(186,228,179)",
+               "rgb(116,196,118)", "rgb(49,163,84)", "rgb(0,109,44)"]);
+    d3.json("YRBSS_CigData.json", function(error,data){
+
+      getData(data);
+
+    })
+
+    function getData(data) {
+
+    }
+
+
+
+
+
+
+  </script>
+</html>
