@@ -1,0 +1,40 @@
+
+@media only screen and (min-width: 1px) {
+	 body {
+	 	background-color: #f5ede1;
+	 	font-family: 'Montserrat', sans-serif;
+	 } 
+	 h1,h2 {
+	 	font-family: 'Vollkorn', serif;
+	 	font-weight: : 600;
+	 }
+	 h2 {
+	 	font-weight: 400;
+	 }
+	 span {
+	 	font-family: 'Milonga', sans-serif;
+	 	font-size: 2em;
+	 }
+	.content {
+		width: 90%;
+		max-width: 1000px;
+		margin: 40px auto 40px auto;
+	}
+	img {
+		width: 500px;
+		height: auto;
+	}
+
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+.content {
+	width: 70%;
+	max-width: 1000px;
+	margin: 60px auto 40px auto;
+
+
+}

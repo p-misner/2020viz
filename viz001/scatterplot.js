@@ -1,4 +1,4 @@
-var margin = {top: 60, right:30, bottom: 20, left:110},
+var margin = {top: 60, right:30, bottom: 20, left:20},
 	width = 460 - margin.left - margin.right,
 	height = 400 - margin.top - margin.bottom;
 
@@ -44,7 +44,21 @@ var svg2 = d3.select("#scatter")
 					// .attr("y", d=> {return y(parseInt(d.ObservedFrequency))})
 					.attr("width",barwidth)
 					.attr("height", d=> {return height - y(parseInt(d.ObservedFrequency)) + padding})
-					.style("fill", "green");
+					.style("fill", "orange");
+			dashWidth = 9;
+			var fillPattern = svg2.append("defs")
+				.append("pattern")
+			    .attr('id', 'hash')
+			    .attr('patternUnits', 'userSpaceOnUse')
+			    .attr('width', dashWidth)
+			    .attr('height', dashWidth)
+			    .attr("x", 0).attr("y", 0)
+			    .append("g").style("fill", "none")
+			    .style("stroke", "orange")
+			    .style("stroke-width", 2);
+			fillPattern.append("path").attr("d", "M0,0 l"+dashWidth+","+dashWidth);
+			// fillPattern.append("path").attr("d", "M"+dashWidth+",0 l-"+dashWidth+","+dashWidth);
+			
 			svg2.selectAll("rect2")
 				.data(data)
 				.enter()
@@ -54,7 +68,7 @@ var svg2 = d3.select("#scatter")
 					.attr("y", d => {return y(parseInt(d.PredictedFrequency))})
 					.attr("width", barwidth)
 					.attr("height", d => {return height - y(parseInt(d.PredictedFrequency)) + padding})
-					.attr("fill", "blue");
+					.attr("style", "fill:url(#hash)");
 			var lineFunction = d3.line()
 				.x(d => {return x(parseInt(d.NumDeaths))+barwidth})
 				.y(d => {return y(parseInt(d.ObservedFrequency))})
@@ -62,7 +76,7 @@ var svg2 = d3.select("#scatter")
 
 			var trendline = svg2.append("path")
 				.attr("d", lineFunction(data))
-				.attr("stroke", "red")
+				.attr("stroke", "blue")
 				.attr("stroke-width",2)
 				.attr("fill","none");
 			var points = svg2.selectAll(".dots")
@@ -72,7 +86,6 @@ var svg2 = d3.select("#scatter")
 				.attr("class","dot")
 				.attr("cx", d => {return x(parseInt(d.NumDeaths))+barwidth})
 				.attr("cy",( d => {return y(parseInt(d.PredictedFrequency)) + padding}))
-				.attr("r", 0)
-				.attr("fill", "url(#diagonal-stripe1");
-
+				.attr("r", 0);
+			
 		});
