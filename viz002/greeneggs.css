@@ -1,0 +1,61 @@
+body {
+    font-family: 'Grinched 2.0','Garamond', serif;
+    margin: 0px;
+    padding: 0px;
+
+}
+text {
+	    font-family: 'Grinched 2.0','Garamond', serif;
+
+}
+.content {
+	min-width: 150px;
+	width: 80vw;
+	margin: 0 auto;
+	/*background-color: floralwhite;*/
+
+}
+.area {
+	margin: 0 10vw;
+	background-color: floralwhite;
+}
+
+h1 {
+	margin-top: 0px;
+}
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font-size: 12px ;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+/*
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 10px sans-serif;
+  color: white;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}*/

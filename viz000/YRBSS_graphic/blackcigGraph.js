@@ -103,7 +103,8 @@ console.log("run")
             .style("text-anchor", "end")
             .attr("transform", "rotate(-65)" )
             .attr("dx",-10)
-            .attr("dy", 5);
+            .attr("dy", 5)
+            .style("font-size","0.8em");
 
         yAxis = d3.selectAll(svg).append("g")
               .attr("class", "yaxis" )
@@ -157,9 +158,9 @@ console.log("run")
           .attr("x2", 0).attr("y2", yone(20))
           .selectAll("stop")
              .data([
-              {offset: "0%", color: "yellowgreen"},
-              {offset: "30%", color: "#c09441"},
-              {offset: "100%", color: "red"}
+              {offset: "0%", color: "#000000"},
+              {offset: "30%", color: "black"},
+              {offset: "100%", color: "black"}
               ])
             .enter().append("stop")
               .attr("offset", function(d) { return d.offset; })

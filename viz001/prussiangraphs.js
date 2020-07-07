@@ -1,4 +1,4 @@
-var margin = {top: 60, right:30, bottom: 20, left:20},
+var margin = {top: 60, right:30, bottom: 40, left:40},
 	width = 660 - margin.left - margin.right,
 	height = 400 - margin.top - margin.bottom;
 
@@ -28,7 +28,7 @@ d3.csv("./kickdata.csv", function(data){
 
 	//X Axis
 	svg3.append("g")
-		.attr("transform","translate(0,"+ height+")")
+		.attr("transform","translate(0,"+ (height -margin.bottom)+")")
 		.call(d3.axisBottom(x).ticks(years.length));
 	//Y Scale
 	var y = d3.scaleLinear()
@@ -36,11 +36,28 @@ d3.csv("./kickdata.csv", function(data){
 		.range([(height/(data.length)),0]);
 	var y2 = d3.scaleLinear()
 		.domain([0,14])
-		.range([(height),0]);
+		.range([(height ),0]);
 	//Y Axis 
 	svg3.append("g")
-		.call(d3.axisLeft(y2).ticks(14));
-
+		.attr("transform","translate(0,"+-margin.bottom+")")
+		.call(d3.axisLeft(y2).ticks(14).tickSize(1));
+	// axis labels
+	svg3.append("text")
+		.attr("transform","rotate(-90)")
+		.attr("y",-20)
+		.attr("x",-width/2 -25)
+		.text("Army Corps Number")
+		.style("fill","black");
+	svg3.append("text")
+		.attr("transform","translate("+width+","+1.1*height +")")
+		.attr("y",-20)
+		.attr("x",-width/2 -25)
+		.text("Year (1875-1894)");
+	svg3.append("text")
+		.attr("transform","translate("+width+","+0+")")
+		.attr("y",-30)
+		.attr("x",-2*width/3 - 30)
+		.text("Density Chart of Prussian Soldier Deaths");
 	// Creating Densities
 	var keys = d3.keys(data[0]).filter(word => word != "Corps");
 	console.log(data.length);
@@ -53,7 +70,7 @@ d3.csv("./kickdata.csv", function(data){
 		}
 		var lineFunction = d3.line()
 				.x(d => {return x(d[0])})
-				.y(d => {return y(d[1]) + (height/14)*(j)})
+				.y(d => {return y(d[1]) -margin.bottom+(height/14)*(j)})
 				.curve(d3.curveCardinal.tension(0.4));
 		var areaColor = d3.scaleLinear()
 			.domain([0,13])
@@ -66,9 +83,9 @@ d3.csv("./kickdata.csv", function(data){
 			.attr("stroke-width", 1.5);
 		var area = d3.area()
 			.x(d => {return x(d[0])})
-			.y0(y(0)+(height/14)*j)
+			.y0(y(0)-margin.bottom+(height/14)*j)
 
-			.y1(d => {return y(d[1]) + (height/14)*(j)})
+			.y1(d => {return y(d[1]) -margin.bottom+ (height/14)*(j)})
 			.curve(d3.curveCardinal.tension(0.4));
 		
 		// console.log(matrix);

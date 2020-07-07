@@ -1,0 +1,132 @@
+@media only screen and (min-width: 1px){
+  body {
+    /*height: 100vh;*/
+    margin: 0;
+    background: #b55404;
+
+    font-family: 'Notable','Futura';
+    font-weight: 900;
+    }
+    section {
+        width: 80%;
+        margin: 0 auto;
+        height: 120vh;
+    }
+  
+    .intro {
+        margin-top: 20vh;
+        background: #b55404;
+        color: white;
+
+
+    }
+    h1 {
+        font-size: 6em;
+        margin: 10px;
+    }
+    h2 {
+        opacity: 0.6;
+    }
+    h3 {
+        font-family: 'Reenie Beanie','Mansalva', 'Homemade Apple', cursive;
+        font-size: 7em;
+        margin: 0px;
+        padding: 0px;
+        transform: rotate(0deg);
+
+    }
+
+    .arrow {
+
+        width: 20px;
+        margin: 0 auto;
+        animation-iteration-count: infinite;
+        animation-delay: 1s;
+        animation-duration: 2s;
+        animation-name: arrow;
+    }
+
+    @keyframes arrow {
+        0% { transform: translateY(0px) }
+        50%{transform: translateY(15px)}
+        100%{transform: translateY(0px)}
+    }
+    .month {
+        width: 100vw;
+        height: 140vh;
+        /*background-color: white;*/
+        color: #b55404;
+        overflow-x: hidden;
+        
+        
+    }
+    #responsive_headline, #responsive_headline1   {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        margin-left: -2vw;
+        letter-spacing: 100px;
+    }
+    #responsive_headline1{
+        letter-spacing: 50px;
+        margin-left: -4vw;
+    }
+    .timeline {
+        position: fixed;
+        top: 0;
+        left: -40px;
+        height: 100vh;
+        width: 20vw;
+        background-image: url(./timeline.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        visibility: hidden;;
+    }
+
+    .dog {
+        height: 170vh;
+        margin-left: 100px;
+        font-family: 'Lato';
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+    .dogimg {
+        height: 400px;
+        width: 250px;
+        background-color: red;
+        position: relative;
+        background-image: url("./images/yellow.jpg");
+        background-position: center;
+        background-repeat: no-repeat;  
+        background-size: cover;
+        position: relative;
+        margin-left: 100px;
+
+    }
+    .left {
+        min-width: 250px;
+        width: 40vw;
+        float: left;
+
+    }
+    .right {
+        color: black;
+        /*text-shadow: 3px 3px 3px rgba(255,255,255,0.4);*/
+        width: 40vw;
+        float: right;
+        margin-right: 10vw;
+    }
+    dd{
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+
+    
+
+     
+}
+
+
+ 

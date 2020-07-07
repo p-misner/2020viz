@@ -1,5 +1,5 @@
 body {
-    font-family: 'Futura', sans-serif;
+    font-family:'Futura','Hind', sans-serif;
   background-image: url(images/backgrounds/crazycolor.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -145,15 +145,17 @@ circle {
 
       }
 .buttons {
-        border-color: black;
-        border-style: solid;
-        border-width: .5px;
-        border-radius: 5px;
-        background-color: #00F3AB;
-        color: black;
-        margin: 3px;
-      }
-
+  border-color: black;
+  border-style: solid;
+  border-width: .5px;
+  border-radius: 5px;
+  background-color: #00F3AB;
+  color: black;
+  margin: 3px;
+}
+.spacer {
+  height: 100px;
+}
 
 b {
   font-size: 4em;
@@ -165,22 +167,61 @@ b {
 }
 span {
   display: inline-block;
-  color: darksalmon;
+  color: purple;
   position: relative;
   white-space: nowrap;
   top: 0;
   left: 0;
   animation: move 20s;
   animation-iteration-count: infinite;
-animation-delay: 3s;
+  animation-delay: 3s;
   overflow-y: hidden
 }
+.rotate {
+  text-align: right;
+
+}
+
+
+#cigcontrols {
+  fill: black;
+  height: 190px;
+  background-color: transparent;
+}
+
+#cigcontrols button{
+  background-color: transparent;
+  font-size: "1em";
+
+}
+
+#ciguse {
+margin-right: 10%;
+}
+
+#smokeless {
+  margin-top: 200px;
+  margin-right: 10%;
+  clear: right;
+}
+
+
 @keyframes move {
 0%  { top: 0px; }
 20% { top: -85px; }
 40% { top: -170px; }
 60% { top: -255px; }
 80% { top: -340px; }
+}
+
+@media only screen and (min-width:1000px ){
+  .rotate {
+    margin-left: 10%;
+  }
+  #cigcontrols {
+    width: 70vw;
+      margin-left: 200px;
+  }
 }
 
 
