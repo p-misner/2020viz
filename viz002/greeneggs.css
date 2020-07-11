@@ -5,9 +5,10 @@ body {
 
 }
 text {
-	    font-family: 'Grinched 2.0','Garamond', serif;
-
+  font-family: /*'Grinched 2.0',*/'Garamond', serif;
 }
+
+
 .content {
 	min-width: 150px;
 	width: 80vw;
@@ -15,6 +16,18 @@ text {
 	/*background-color: floralwhite;*/
 
 }
+
+.tooltip {
+  color: white;
+  width: 100px;
+  height: 60px;
+  font: 12px sans-serif;
+  background: darkblue;
+  border: 0px;
+  border-radius: 8px;
+  margin: 0;
+}
+
 .area {
 	margin: 0 10vw;
 	background-color: floralwhite;

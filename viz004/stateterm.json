@@ -1,0 +1,202 @@
+[
+  {
+    "states": "Alabama",
+    "mort": 8.6
+  },
+  {
+    "states": "Alaska",
+    "mort": 4.2
+  },
+  {
+    "states": "Arizona",
+    "mort": 5.9
+  },
+  {
+    "states": "Arkansas",
+    "mort": 7.2
+  },
+  {
+    "states": "California",
+    "mort": 4.7
+  },
+  {
+    "states": "Colorado",
+    "mort": 5.3
+  },
+  {
+    "states": "Connecticut",
+    "mort": 5.2
+  },
+  {
+    "states": "Delaware",
+    "mort": 8
+  },
+  {
+    "states": "Florida",
+    "mort": 6.4
+  },
+  {
+    "states": "Georgia",
+    "mort": 6.5
+  },
+  {
+    "states": "Hawaii",
+    "mort": 5.4
+  },
+  {
+    "states": "Idaho",
+    "mort": 5.1
+  },
+  {
+    "states": "Illinois",
+    "mort": 6.6
+  },
+  {
+    "states": "Indiana",
+    "mort": 7.3
+  },
+  {
+    "states": "Iowa",
+    "mort": 5
+  },
+  {
+    "states": "Kansas",
+    "mort": 6.2
+  },
+  {
+    "states": "Kentucky",
+    "mort": 6.8
+  },
+  {
+    "states": "Louisiana",
+    "mort": 8
+  },
+  {
+    "states": "Maine",
+    "mort": 6.3
+  },
+  {
+    "states": "Maryland",
+    "mort": 6.7
+  },
+  {
+    "states": "Massachusetts",
+    "mort": 4.3
+  },
+  {
+    "states": "Michigan",
+    "mort": 6.9
+  },
+  {
+    "states": "Minnesota",
+    "mort": 4.8
+  },
+  {
+    "states": "Mississippi",
+    "mort": 9.3
+  },
+  {
+    "states": "Missouri",
+    "mort": 6.5
+  },
+  {
+    "states": "Montana",
+    "mort": 6
+  },
+  {
+    "states": "Nebraska",
+    "mort": 5.2
+  },
+  {
+    "states": "Nevada",
+    "mort": 5.4
+  },
+  {
+    "states": "New Hampshire",
+    "mort": 4.2
+  },
+  {
+    "states": "New Jersey",
+    "mort": 4.8
+  },
+  {
+    "states": "New Mexico",
+    "mort": 6
+  },
+  {
+    "states": "New York",
+    "mort": 5.1
+  },
+  {
+    "states": "North Carolina",
+    "mort": 7.2
+  },
+  {
+    "states": "North Dakota",
+    "mort": 6.5
+  },
+  {
+    "states": "Ohio",
+    "mort": 7.7
+  },
+  {
+    "states": "Oklahoma",
+    "mort": 7.4
+  },
+  {
+    "states": "Oregon",
+    "mort": 5
+  },
+  {
+    "states": "Pennsylvania",
+    "mort": 6.9
+  },
+  {
+    "states": "Rhode Island",
+    "mort": 6.7
+  },
+  {
+    "states": "South Carolina",
+    "mort": 7.4
+  },
+  {
+    "states": "South Dakota",
+    "mort": 7.2
+  },
+  {
+    "states": "Tennessee",
+    "mort": 7.5
+  },
+  {
+    "states": "Texas",
+    "mort": 5.9
+  },
+  {
+    "states": "Utah",
+    "mort": 5.1
+  },
+  {
+    "states": "Vermont",
+    "mort": 4.5
+  },
+  {
+    "states": "Virginia",
+    "mort": 6.7
+  },
+  {
+    "states": "Washington",
+    "mort": 4.8
+  },
+  {
+    "states": "West Virginia",
+    "mort": 7
+  },
+  {
+    "states": "Wisconsin",
+    "mort": 5.9
+  },
+  {
+    "states": "Wyoming",
+    "mort": 6.4
+  }
+]

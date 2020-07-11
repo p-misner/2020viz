@@ -1,0 +1,29 @@
+body {
+	font-family: 'Georgia', serif;
+}
+h1, h2, p {
+	width: 80vw;
+	margin: 0 auto;
+}
+.state:hover {
+	opacity: 0.2;
+}
+div.tooltip { 
+          position: absolute;     
+          padding: 2px 10px;       
+          font: 12px sans-serif;    
+          background: #fff; 
+          border: 0px;        
+          pointer-events: none;    
+          box-shadow: 2px 2px 5px "#000";
+          margin: 0px; 
+}
+
+.tooltip p {
+	width: auto;   
+	margin: 0px; 
+  	padding: 2px 2px 2px 2px;
+  	text-align: left;       
+     
+}
+
