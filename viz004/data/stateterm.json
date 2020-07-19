@@ -1,202 +1,202 @@
 [
   {
     "states": "Alabama",
-    "mort": 8.6
+    "mort": 2
   },
   {
     "states": "Alaska",
-    "mort": 4.2
+    "mort": 1
   },
   {
     "states": "Arizona",
-    "mort": 5.9
+    "mort": 2
   },
   {
     "states": "Arkansas",
-    "mort": 7.2
+    "mort": 2
   },
   {
     "states": "California",
-    "mort": 4.7
+    "mort": 1
   },
   {
     "states": "Colorado",
-    "mort": 5.3
+    "mort": 2
   },
   {
     "states": "Connecticut",
-    "mort": 5.2
+    "mort": 2
   },
   {
     "states": "Delaware",
-    "mort": 8
+    "mort": 2
   },
   {
     "states": "Florida",
-    "mort": 6.4
+    "mort": 2
   },
   {
     "states": "Georgia",
-    "mort": 6.5
+    "mort": 2
   },
   {
     "states": "Hawaii",
-    "mort": 5.4
+    "mort": 1
   },
   {
     "states": "Idaho",
-    "mort": 5.1
+    "mort": 3
   },
   {
     "states": "Illinois",
-    "mort": 6.6
+    "mort": 1
   },
   {
     "states": "Indiana",
-    "mort": 7.3
+    "mort": 2
   },
   {
     "states": "Iowa",
-    "mort": 5
+    "mort": 1
   },
   {
     "states": "Kansas",
-    "mort": 6.2
+    "mort": 3
   },
   {
     "states": "Kentucky",
-    "mort": 6.8
+    "mort": 2
   },
   {
     "states": "Louisiana",
-    "mort": 8
+    "mort": 2
   },
   {
     "states": "Maine",
-    "mort": 6.3
+    "mort": 3
   },
   {
     "states": "Maryland",
-    "mort": 6.7
+    "mort": 2
   },
   {
     "states": "Massachusetts",
-    "mort": 4.3
+    "mort": 1
   },
   {
     "states": "Michigan",
-    "mort": 6.9
+    "mort": 1
   },
   {
     "states": "Minnesota",
-    "mort": 4.8
+    "mort": 2
   },
   {
     "states": "Mississippi",
-    "mort": 9.3
+    "mort": 3
   },
   {
     "states": "Missouri",
-    "mort": 6.5
+    "mort": 2
   },
   {
     "states": "Montana",
-    "mort": 6
+    "mort": 3
   },
   {
     "states": "Nebraska",
-    "mort": 5.2
+    "mort": 2
   },
   {
     "states": "Nevada",
-    "mort": 5.4
+    "mort": 2
   },
   {
     "states": "New Hampshire",
-    "mort": 4.2
+    "mort": 3
   },
   {
     "states": "New Jersey",
-    "mort": 4.8
+    "mort": 2
   },
   {
     "states": "New Mexico",
-    "mort": 6
+    "mort": 3
   },
   {
     "states": "New York",
-    "mort": 5.1
+    "mort": 1
   },
   {
     "states": "North Carolina",
-    "mort": 7.2
+    "mort": 2
   },
   {
     "states": "North Dakota",
-    "mort": 6.5
+    "mort": 3
   },
   {
     "states": "Ohio",
-    "mort": 7.7
+    "mort": 1
   },
   {
     "states": "Oklahoma",
-    "mort": 7.4
+    "mort": 2
   },
   {
     "states": "Oregon",
-    "mort": 5
+    "mort": 2
   },
   {
     "states": "Pennsylvania",
-    "mort": 6.9
+    "mort": 1
   },
   {
     "states": "Rhode Island",
-    "mort": 6.7
+    "mort": 3
   },
   {
     "states": "South Carolina",
-    "mort": 7.4
+    "mort": 2
   },
   {
     "states": "South Dakota",
-    "mort": 7.2
+    "mort": 3
   },
   {
     "states": "Tennessee",
-    "mort": 7.5
+    "mort": 2
   },
   {
     "states": "Texas",
-    "mort": 5.9
+    "mort": 2
   },
   {
     "states": "Utah",
-    "mort": 5.1
+    "mort": 3
   },
   {
     "states": "Vermont",
-    "mort": 4.5
+    "mort": 3
   },
   {
     "states": "Virginia",
-    "mort": 6.7
+    "mort": 2
   },
   {
     "states": "Washington",
-    "mort": 4.8
+    "mort": 2
   },
   {
     "states": "West Virginia",
-    "mort": 7
+    "mort": 3
   },
   {
     "states": "Wisconsin",
-    "mort": 5.9
+    "mort": 1
   },
   {
     "states": "Wyoming",
-    "mort": 6.4
+    "mort": 3
   }
 ]

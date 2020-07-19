@@ -5,8 +5,14 @@ h1, h2, p {
 	width: 80vw;
 	margin: 0 auto;
 }
+p {
+	text-indent: 20px;
+}
 .state:hover {
 	opacity: 0.2;
+}
+svg {
+	margin-bottom: 40px;
 }
 div.tooltip { 
           position: absolute;     
@@ -26,4 +32,41 @@ div.tooltip {
   	text-align: left;       
      
 }
+
+/* 
+  Generic Styling, for Desktops/Laptops 
+  */
+  table { 
+    width: 75vw;
+    margin: 40px auto 20px auto;
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+    cursor: s-resize;
+    background-repeat: no-repeat;
+    background-position: 3% center;
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }
+  
+  th.des:after {
+      content: "\21E9";
+    }
+    
+    th.aes:after {
+      content: "\21E7";
+    }
+
+ 
+  
 
