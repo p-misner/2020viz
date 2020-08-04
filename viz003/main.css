@@ -120,7 +120,29 @@
     dd{
         margin: 0;
         margin-bottom: 10px;
+                font-weight:  300;
+
     }
+    dt {
+
+        font-weight:  700;
+        font-family: 'Lato';
+    }
+
+    .sideside {
+        display: inline-block;
+        float: left;
+        /*clear: right; */
+    }
+
+    .age {
+        padding-left: 100px;
+    }
+
+    .background {
+        clear: both;
+    }
+
 
 
     

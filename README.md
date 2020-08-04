@@ -6,6 +6,7 @@ Visualization: static bar graph and density graph
 Tools: d3.js  
 Dataset: Death by Horsekick  
 Live Preview:   
+
 ## Viz 002: Green Eggs and Ham: The Tree Diagram
 Visualization: interactive radial tree diagram  
 Tools: d3.js  
@@ -17,11 +18,23 @@ Tools: vanilla javascript
 Dataset - personal emails and pictures  
 Live Preview:   
 
-## Viz 004: Part Time State Legislatures
+## Viz 004: Part Time State Legislatures: US Map
 Visualization: United States Map with tool tip and   
-Tools: d3.js, rough.js  
+Tools: d3.js, PyPDF2, pandas
 Dataset:  
-Live Preview:   
+Live Preview: 
+
+## Viz 006: Part Time Legislatures: Heatmap
+Visualization: United States Map with tool tip and   
+Tools: d3.js, PyPDF2, pandas
+Dataset:  
+Live Preview: 
+
+##Viz 005: Demographics of US Colleges
+Visualization:
+Tools: College Scorecard API, __ API, React, Mapbox, MongoDB?  
+
+
 
 ## Source of Data Sets
 https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0
