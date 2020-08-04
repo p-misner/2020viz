@@ -33,9 +33,9 @@ months = ['Alaska', 'Alabama', 'Arkansas', 'Arizona', 'California', 'Colorado', 
 #     fobj.write(line)
 # fobj.close()
 import csv
-fobj = open('./data/cleaned.txt','r');
+fobj = open('../data/cleaned.txt', 'r');
 f = fobj.readlines()
-with open('./data/2019.csv','w', newline='') as csvfile:
+with open('../data/2019.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile, delimiter=',')
     for i, line in enumerate(f):
         if line.strip() in months:

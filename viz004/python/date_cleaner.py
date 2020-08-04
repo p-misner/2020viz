@@ -36,6 +36,6 @@ for i, line in enumerate(df['State']):
 # print(statename)
 print(json.dumps(statename, sort_keys=True, indent=4, separators=(',', ': ')))
 
-fobj = open('./data/legislativesessions.json','w')
+fobj = open('./data/legislativesessions.json', 'w')
 fobj.write(json.dumps(statename, sort_keys=True, indent=4, separators=(',', ': ')))
 fobj.close()

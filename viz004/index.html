@@ -5,21 +5,40 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Part Time Legislatures</title>
 	<link rel="stylesheet" href="./style.css">
+	<!-- <link rel='icon' href='favicon.ico' type='image/x-icon'/ > -->
+	<link rel="icon" 
+      type="image/png" 
+      href="./logo2.png">
 	<script src="https://d3js.org/d3.v5.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roughjs@4.3.1/bundled/rough.min.js"></script>
+
 
 </head>
 <body>
 	<h1>Part Time Legislatures</h1>
 	<h2> some subtitle</h2>
-	<svg id="map"></svg>
-	<svg id="rough"></svg>
-	<p>Unlike the federal government, I was surprised to learn that state legislatures aren't in session for most of the year. Only four states - California, Michigan, New York and Pennsylvania - are classified as full-time legislatures by the National Council of State Legistlatures <span class="footnote">[1] </span>In many states, being a state senator or assemblymembers isn't a full-time job with. <p> 
+	<p>Unlike the federal government, I was surprised to learn that state legislatures aren't in session for most of the year. Only four states - California, Michigan, New York and Pennsylvania - are classified as full-time legislatures by the National Council of State Legistlatures <sup class="footnote">1 </sup>In many states, being a state senator or assemblymembers isn't a full-time job with. <p> 
 	<p> Most broadly, state legislatures can be split into three types: Professional, Citizen and Hybrid. In general,  </p>
+	<svg id="map"></svg>
+ 	<p>Unlike the federal government, I was surprised to learn that state legislatures aren't in session for most of the year. Only four states - California, Michigan, New York and Pennsylvania - are classified as full-time legislatures by the National Council of State Legistlatures <span class="footnote">[1] </span>In many states, being a state senator or assemblymembers isn't a full-time job with. <p> 
+	<p> Most broadly, state legislatures can be split into three types: Professional, Citizen and Hybrid. In general,  </p>
+	<svg id="scatter"></svg>
+	<div> 
+		<button class="tablebtn" id="salarybtn">Salary</button>
+		<button class="tablebtn" id="staffbtn">Staff Size</button>
+	</div>
 	<div id="table"></div>
+	
+	
+	<!-- <svg id="heatmap"></svg> -->
+	<!-- <div id="htooltip"></div> -->
+
 	<script src="map.js"></script>
 	<script src="table.js"></script>
+	<!-- <script src="heatmap.js"></script> -->
+	<script src="scatter.js"></script>
+
 
 </body>
 </html>
