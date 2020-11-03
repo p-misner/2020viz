@@ -1720,45 +1720,41 @@ var treeData =
       "value": 2
     }
   ],
-  "name": " ",
+  "name": "Green Eggs and Ham",
   "value": 15
 };
 
-
-
-
-
-
-
 // Set the dimensions and margins of the diagram
-var margin = {top: 20, right: 90, bottom: 30, left: 20},
-    width = 960 - margin.left - margin.right,
-    height = 960 - margin.top - margin.bottom;
-radius = width/2;
-// append the svg object to the body of the page
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
-var attach = d3.select("body").append("svg")
+var margin = {top: 30, right: 90, bottom: 40, left: 20},
+    width = 1000 - margin.left - margin.right,
+    height = 900 - margin.top - margin.bottom;
+let radius = height / width >= 1 ?  (width/2 ) : (height/2  );
+
+var attach = d3.select("#radial")
     .attr("class","area")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
       .attr("transform", "translate(" + (width / 2 + margin.left) + "," + (height / 2 + margin.top) + ")");
-var duration = d3.event && d3.event.altKey ? 250 : 1500;
-var diagonal = d3.linkRadial().angle(d =>  d.x).radius(d => d.y);
 
-var i = 0,
-    root;
+var duration = d3.event && d3.event.altKey ? 250 : 1500;
+
+var i = 0;
+var root;
 var logScale = d3.scaleLog()
   .domain([1, 70])
-  .range([2, 19]);
+  .range([4, 23]);
+var myColor = d3.scaleLinear().domain([1,84])
+  .range(["#faa278", "#0d851d"])
 // declares a tree layout and assigns the size
-var tree = d3.tree().size([2*Math.PI, radius]).separation((a,b) => (logScale(a.value) > logScale(b.value) ? 1.2*logScale(a.value) : 1.2*logScale(b.value) )/a.depth);
+var tree = d3.tree()
+  .size([2*Math.PI, radius])
+  .separation((a,b) => (logScale(a.value) > logScale(b.value) ? 1.2*logScale(a.value) : 1.2*logScale(b.value) )/a.depth);
 
 // Assigns parent, children, height, depth
 root = d3.hierarchy(treeData, function(d) { return d.children; });
 root.x0 = 0;
-root.y0 = 0;
+root.y0=0;
 
 // Collapse after the second level
 root.children.forEach(collapse);
@@ -1771,14 +1767,14 @@ function collapse(d) {
     d._children = d.children
     d._children.forEach(collapse)
     d.children = null
+    }
   }
-}
 
 function update(source) {
 
   // Assigns the x and y position for the nodes
   var treeData2 = tree(root);
-
+  
   // Compute the new tree layout.
   var nodes = treeData2.descendants(),
       links = treeData2.descendants().slice(1);
@@ -1804,21 +1800,24 @@ function update(source) {
   nodeEnter.append('circle')
       .attr('class', 'node')
       .attr('r', 1e-6)
-      .style("fill", function(d) {
-          return d._children ? "lightsteelblue" : "#fff";
+      .style("fill", d=> {return myColor(d.data.value)})
+      .style("opacity", function(d){
+        return d._children ? 0.5 : 1;
       });
 
   // Add labels for the nodes
   nodeEnter.append('text')
       .attr("dy", ".35em")
       .attr("x", function(d) {
-          return d.children || d._children ? 22 : 13;
+        // console.log(d);
+          // return d.children || d._children ? 32 : 13;
+          return 10 + logScale(d.data.value);
       })
       .attr("text-anchor", function(d) {
-          return d.children || d._children ? "end" : "start";
+          return d.children || d._children ? "start" : "start";
       })
-      .text(function(d) { return d.data.name; });
 
+      .text(function(d) { return d.data.name; });
   // UPDATE
   var nodeUpdate = nodeEnter.merge(node);
 
@@ -1834,8 +1833,9 @@ function update(source) {
   // Update the node attributes and style
   nodeUpdate.select('circle.node')
     .attr('r', d=> logScale(d.value))
-    .style("fill", function(d) {
-        return d._children ? "lightsteelblue" : "#fff";
+    .style("fill", d=> {return myColor(d.data.value)})
+   .style("opacity", function(d){
+      return d._children ? 0.5 : 1;
     })
     .attr('cursor', 'pointer');
 
@@ -1860,30 +1860,35 @@ function update(source) {
 
   // Update the links...
   var link = attach.selectAll('path.link')
-      .data(links, function(d) { return d.id; });
+    .data(links, function(d) { return d.id; });
 
   // Enter any new links at the parent's previous position.
   var linkEnter = link.enter().insert('path', "g")
       .attr("class", "link")
       .attr('d', function(d){
-        var o = {x: source.x0, y: source.y0}
-        return d3.linkRadial().angle(d =>  d.x).radius(d => d.y)
+        var o = {x: d.x, y: d.y, x0: d.parent.x, y0: d.parent.y };
+        // return d3.linkRadial().angle(d =>  d.x).radius(d => d.y)
+        return diagonal(o);
       });
 
-  // UPDATE
+  // update positions
   var linkUpdate = linkEnter.merge(link);
 
   // Transition back to the parent element position
   linkUpdate.transition()
       .duration(duration)
-      .attr('d', function(d){ return d3.linkRadial().angle(d =>  d.x).radius(d => d.y) });
+      .attr('d', function(d){ 
+        var o = {x: d.x, y: d.y, x0: d.parent.x, y0: d.parent.y };
+        return diagonal(o);
+      });
 
   // Remove any exiting links
   var linkExit = link.exit().transition()
-      .duration(duration)
+      .duration(duration/2)
       .attr('d', function(d) {
-        var o = {x: source.x, y: source.y}
-        return d3.linkRadial().angle(d =>  d.x).radius(d => d.y)
+        var o = {x: d.x, y: d.y, x0: d.parent.x, y0: d.parent.y };
+        return diagonal(o);
+
       })
       .remove();
 
@@ -1893,12 +1898,10 @@ function update(source) {
     d.y0 = d.y;
   });
 
-  // Creates a curved (diagonal) path from parent to the child nodes
-
-var diagonal = d3.linkRadial().angle(d =>  d.x).radius(d => d.y);
 
   // Toggle children on click.
   function click(d) {
+    console.log("click");
     if (d.children) {
         d._children = d.children;
         d.children = null;
@@ -1908,4 +1911,49 @@ var diagonal = d3.linkRadial().angle(d =>  d.x).radius(d => d.y);
       }
     update(d);
   }
+
+  //calculate svg path
+  
 }
+function diagonal(s) {
+      // x radius; y angle
+      path = `M ${s.y} ${s.x} ${s.y0} ${s.x0}`;
+      let deg = 270;
+      path2 = `M ${s.y*Math.cos(s.x +d2r(deg))} ${s.y*Math.sin(s.x +d2r(deg))} ${(s.y0)*Math.cos(s.x0 +d2r(deg))} ${(s.y0)*Math.sin(s.x0+d2r(deg))}`;
+      // console.log(path2);
+      return path2;
+  }
+
+  //degree to radian converter
+  function d2r(degrees) {
+    var pi = Math.PI;
+    return degrees*pi/180;
+  }
+function expandAll(){
+    expand(root); 
+    update(root);
+}
+function expand(d){   
+    var children = (d.children)?d.children:d._children;
+    if (d._children) {        
+        d.children = d._children;
+        d._children = null;       
+    }
+    if(children)
+      children.forEach(expand);
+}
+function collapseAll(){
+    root.children.forEach(collapse);
+    collapse(root);
+    update(root);
+}
+
+
+
+
+/****
+
+
+
+
+**////

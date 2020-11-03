@@ -1,19 +1,33 @@
 body {
-    font-family: 'Grinched 2.0','Garamond', serif;
+   font-family: /*'Grinched 2.0',*/'Lato', sans-serif;
     margin: 0px;
     padding: 0px;
+    font-weight: 400;
 
 }
-text {
-  font-family: /*'Grinched 2.0',*/'Garamond', serif;
-}
 
+button {
+  background-color: #0d851d; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btngroup{
+  width: 350px;
+  margin: 0 auto 50px auto;
+}
 
 .content {
 	min-width: 150px;
 	width: 80vw;
 	margin: 0 auto;
-	/*background-color: floralwhite;*/
 
 }
 
@@ -29,17 +43,22 @@ text {
 }
 
 .area {
-	margin: 0 10vw;
-	background-color: floralwhite;
+	margin: 0 0 0 50px;
 }
 
+
 h1 {
-	margin-top: 0px;
+   font-family: 'Henny Penny','Garamond', serif;
+	margin-top: 40px;
+  font-size: 3em;
+}
+p {
+  font-size: 1.2em;
 }
 .node circle {
   fill: #fff;
-  stroke: steelblue;
-  stroke-width: 3px;
+ /* stroke: steelblue;
+  stroke-width: 3px;*/
 }
 
 .node text {
@@ -51,24 +70,41 @@ h1 {
   stroke: #ccc;
   stroke-width: 2px;
 }
-/*
-.node {
-  cursor: pointer;
-}
-
-.node circle {
+.noded circle {
   fill: #fff;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+ /* stroke: steelblue;
+  stroke-width: 3px;*/
 }
 
-.node text {
-  font: 10px sans-serif;
-  color: white;
+.noded text {
+  font-size: 12px ;
 }
 
-.link {
+.linkd {
   fill: none;
   stroke: #ccc;
-  stroke-width: 1.5px;
-}*/
+  stroke-width: 2px;
+}
+img {
+  height: auto;
+  width:180px;
+   display: block;
+    float: left;
+    margin-right: 10px;
+}
+.legend p {
+  padding-top: 2px;
+  font-family: 'Henny Penny', sans-serif;
+  letter-spacing:0.5px;
+}
+.legend{
+  height: 60px;
+  margin: 0 auto;
+  display: block;
+  width: 350px;
+  /*text-align: center;*/
+}
+.spacer {
+  height: 200px;
+}
+

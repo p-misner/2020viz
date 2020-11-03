@@ -15,7 +15,7 @@ import anytree.search
 from anytree.exporter import JsonExporter
 import json
 
-file = pd.read_csv("./fulltext.csv", header=None)
+file = pd.read_csv("../data/fulltext.csv", header=None)
 file.columns = ["Sentence"]
 d = {}
 
@@ -73,6 +73,6 @@ for i, line in enumerate(file["Sentence"], start=0):
 exporter = JsonExporter(indent=2, sort_keys=True)
 print(exporter.export(new["0Start"]))
 
-with open('greeneggs.json', "w") as outfile:
+with open('../data/greeneggs.json', "w") as outfile:
     outfile.write(exporter.export(new["0Start"]))
 
