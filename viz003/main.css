@@ -1,24 +1,22 @@
 @media only screen and (min-width: 1px){
-  body {
-    /*height: 100vh;*/
-    margin: 0;
-    background: #b55404;
-
-    font-family: 'Notable','Futura';
-    font-weight: 900;
+    body {
+        /*height: 100vh;*/
+        margin: 0;
+        background: #b55404;
+        font-family: 'Notable','Futura';
+        font-weight: 900;
+        overflow-x: hidden;
     }
     section {
         width: 80%;
         margin: 0 auto;
         height: 120vh;
     }
-  
+
     .intro {
         margin-top: 20vh;
         background: #b55404;
         color: white;
-
-
     }
     h1 {
         font-size: 6em;
@@ -37,9 +35,9 @@
     }
 
     .arrow {
-
         width: 20px;
         margin: 0 auto;
+        margin-top: 50px;
         animation-iteration-count: infinite;
         animation-delay: 1s;
         animation-duration: 2s;
@@ -54,7 +52,6 @@
     .month {
         width: 100vw;
         height: 140vh;
-        /*background-color: white;*/
         color: #b55404;
         overflow-x: hidden;
         
@@ -82,6 +79,9 @@
         background-size: contain;
         background-repeat: no-repeat;
         visibility: hidden;;
+    }
+    .descrip {
+       height: 600px;
     }
 
     .dog {
@@ -141,13 +141,7 @@
 
     .background {
         clear: both;
-    }
-
-
-
-    
-
-     
+    }     
 }
 
 

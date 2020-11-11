@@ -18,9 +18,10 @@ years = ['2019', '2018','2017', '2016', '2015', '2014'];
 states = ['Alaska', 'Alabama', 'Arkansas', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Iowa', 'Idaho', 'Illinois', 'Indiana', 'Kansas', 'Kentucky', 'Louisiana', 'Massachusetts', 'Maryland', 'Maine', 'Michigan', 'Minnesota', 'Missouri', 'Mississippi', 'Montana', 'North Carolina', 'North Dakota', 'Nebraska', 'New Hampshire', 'New Jersey', 'New Mexico', 'Nevada', 'New York', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Virginia', 'Vermont', 'Washington', 'Wisconsin', 'West Virginia', 'Wyoming'];
 
 //variables for heatmap tooltip
-var hheight = 100;
+var hheight = 120;
 var hwidth = 200;
 var hmargin = {top: 20, left: 40, right: 20, bottom:20};
+
 
 
 var htooltip = d3.select("#htooltip")
@@ -38,8 +39,8 @@ var mouseover = function(d) {
 var mousemove = function(d) {
 	htooltip
 	  .html("Number of Days Legislative Meets: " + d.Value)
-	  .style("left", (d3.event.pageX) + "px")
-	  .style("top", (d3.event.pageY -15) + "px");
+	  .style("left", (d3.event.pageX -20) + "px")
+	  .style("top", (d3.event.pageY +15) + "px");
 }
 var mouseleave = function(d) {
 	htooltip.style("opacity", 0);
@@ -60,12 +61,12 @@ var x = d3.scaleBand()
 			.domain(months)
 			.padding(0.1);
 var y = d3.scaleBand()
-			.range([0, hheight])
+			.range([0, hheight-20])
 			.domain(years)
 			.padding(0.1);
 
 //loading in data
-var files = ["https://raw.githubusercontent.com/p-misner/100daysofvisualization/master/viz004/states-albers-10m.json", "./data/stateterm.json","./data/legislativesessions.csv" ];
+var files = ["https://raw.githubusercontent.com/p-misner/100daysofvisualization/master/viz004/data/states-albers-10m.json", "./data/stateterm.json","./data/legislativesessions.csv" ];
 var promises = [
 	d3.json(files[0]),
 	d3.json(files[1], d=>{
@@ -104,10 +105,12 @@ Promise.all(promises).then(function([values, statedata,heatdata]){
 			div.transition()
 				.duration(200)
 				.style("opacity", 0.99);
-			div.html(`<h3> ${d.properties.name}</h3><h4> ${returnTerm(map.get(d.properties.name))} Legislature</h4><svg id="holder"></svg>`)
+			div.html(`<h3> ${d.properties.name}</h3><h4> ${returnTerm(map.get(d.properties.name))} Legislature</h4><p class="heatholder">When Legislature is in Session </p><svg id="holder"></svg>`)
 				.style("left", (d3.event.pageX +15 ) +"px")
 				.style("top", (d3.event.pageY +15 )+"px")
 				.style("box-shadow", "10px 10px 5px rgba(0,0,0,0.2)")
+				.style("text-align", "center");
+
 			drawHeatmap(d.properties.name);
 		})
 		.on("mousemove",()=> {
@@ -139,10 +142,9 @@ Promise.all(promises).then(function([values, statedata,heatdata]){
 		//building scales
 		
 		d3.select("#holder").append("g")
-			.attr("transform","translate("+(hmargin.left)+","+(hmargin.top+hheight)+")")
+			.attr("transform","translate("+(hmargin.left)+","+(110)+")")
 			.call(d3.axisBottom(x).tickValues(months).tickFormat((d)=>{return d.slice(0,1)}));
 
-		
 		
 
 		//adding squares
@@ -151,7 +153,7 @@ Promise.all(promises).then(function([values, statedata,heatdata]){
 			.enter()
 			.append("rect")
 				.attr("x", d=>{return (hmargin.left+x(d["Month"]))})
-				.attr("y", d=>{return hmargin.top+y(d["Year"])})
+				.attr("y", d=>{return 10+y(d["Year"])})
 				.attr("width", x.bandwidth())
 				.attr("height", y.bandwidth())
 				.style("fill", d=>{return colorScale(d["Value"])})
@@ -162,7 +164,7 @@ Promise.all(promises).then(function([values, statedata,heatdata]){
 				.on("mouseleave", mouseleave);
 		// labels
 		d3.select("#holder").append("g")
-			.attr("transform","translate("+(hmargin.left)+","+(hmargin.top)+")")
+			.attr("transform","translate("+(hmargin.left)+","+(10)+")")
 			.call(d3.axisLeft(y).ticks(5).tickValues(years).tickFormat((d=>{return d.slice(0,4)})));
 		
 		// d3.select("#holder").append("text")
@@ -191,6 +193,57 @@ function returnTerm(num){
 	}
 
 }
+
+/* 
+
+LEGEND
+*/
+
+	 	
+
+var legend = d3.select("#legend")
+	.style("width", "600px")
+	.style("height", "100px")
+	.style("margin-bottom", "10px")
+	.append("g")
+	.attr('class', 'circles');
+legend.append("rect")
+	 	.attr("width", 25)
+	 	.attr("height", 25)
+	 	.attr("y", 15)
+	 	.attr("x", 120)
+	 	.attr("fill", "#043691");
+legend.append("text")
+	 	.attr("x",150)
+	 	.attr("y", 33)
+	 	.text("Full Time Legislature")
+	 	.attr("fill", "black")
+	 	.style('font-size', '14px');
+legend.append("rect")
+	 	.attr("width", 25)
+	 	.attr("height", 25)
+	 	.attr("y", 15)
+	 	.attr("x", 310)
+	 	.attr("fill", "#707173");
+legend.append("text")
+	 	.attr("x", 340)
+	 	.attr("y", 33)
+	 	.text("Hybrid")
+	 	.attr("fill", "black")
+	 	.style('font-size', '14px');
+legend.append("rect")
+	 	.attr("width", 25)
+	 	.attr("height", 25)
+	 	.attr("y", 55)
+	 	.attr("x", 120)
+	 	.attr("fill", "#f5ca0a");
+legend.append("text")
+	 	.attr("x", 150)
+	 	.attr("y", 73)
+	 	.text("Part-Time Legislature")
+	 	.attr("fill", "black")
+	 	.style('font-size', '14px');
+
 
 
 

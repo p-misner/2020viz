@@ -1,6 +1,6 @@
 
 body {
-	font-family: 'Georgia', serif;
+	font-family: 'Montserrat', serif;
 }
 h1, h2, p {
 	width: 80vw;
@@ -12,14 +12,21 @@ h1 {
 h2 {
   margin-bottom: 15px;
 }
+h5 {
+  font-weight: 300;
+  color: red;
+  margin-bottom: 0;
+}
+
 p {
 	text-indent: 20px;
   margin-top: 3px;
+  font-size: 1.1em;
 }
 .state:hover {
 	opacity: 0.2;
 }
-svg {
+#map {
 	margin-bottom: 40px;
 }
 .footnote {
@@ -44,15 +51,12 @@ div.tooltip {
 	text-align: left;       
      
 }
-#holder svg {
-  background-color: 'red';
-  height: 150px;
-}
+
 #scatter {
   width: 80vw;
     min-width: 200px;
   max-width: 1200px;
-  margin-left: 10vw;
+  /*margin-left: 10vw;*/
 }
 .tablebtn {
   width: 140px;
@@ -64,6 +68,10 @@ div.tooltip {
   font-size: 14px;
   display: block;
 
+}
+
+#legend{
+  margin-bottom: 10px;
 }
 
 /* Table Styling */
@@ -98,7 +106,9 @@ th.des:after {
 th.aes:after {
   content: "\21E7";
 }
-
+.spacer {
+  height: 40px;
+}
  
   
 

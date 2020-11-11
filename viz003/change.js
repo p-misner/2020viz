@@ -1,20 +1,3 @@
-// var images = document.querySelectorAll('.anim');
-    // observer = new IntersectionObserver((entries) => {
-    // 	entries.forEach(entry => {
-    // 		if(entry.intersectionRatio > 0){
-    // 		entry.target.style.animation = `anim1 ${entry.target.dataset.delay} forwards ease-out`;
-    // 		}
-    // 		else {
-    // 			entry.target.style.animation = 'none';
-    // 		}
-    // 	})
-    	
-    // });
-
-    // images.forEach(image => {
-    // 	observer.observe(image);
-    // })
-
 window.onbeforeunload = function () {
     window.scrollTo(0,0);
 };
@@ -23,18 +6,14 @@ window.onbeforeunload = function () {
 
 const handleDate = entries => {
     entries.forEach(entry => {
-        
         let month = entry.target.dataset.month;
         if (entry.intersectionRatio > 0 && entry.isIntersecting == true ) {
             document.getElementById("responsive_headline").innerHTML = month ;
-            let rand = randomColor()
+            let rand = randomColor();
             document.getElementById("responsive_headline").style.color = rand;
             document.getElementById("responsive_headline1").style.color = rand;
-
-            
-
         }
-    })
+    });
 }
 
 
@@ -83,7 +62,6 @@ function buildThresholdList() {
 }
 
 function handleIntersect(entries, observer) {
-    // console.log((entries[0].target.className).includes("month") + "  "+entries.length);
     entries.forEach(entry => {
         if ((entry.target.className).includes("month") && entry.intersectionRatio > 0.15 ) {
             entry.target.style.position = "sticky";
@@ -126,25 +104,7 @@ function handleIntersect(entries, observer) {
     });
     
 
-    
-
-
-    // if(state.dir == "down" && state.entry =="enter"){
-    //     document.body.style.backgroundColor = "white"/*"#fceab6"*/;
-    // }
-    // else if (state.dir=="up" && state.entry == "exit" ) {
-    //     document.body.style.backgroundColor = "#b55404";
-    // }
-
 }
-
-// const colorchange = new IntersectionObserver(handleIntersect, hOptions);
-// colorchange.observe(document.querySelector('#change'));
-
-// const observer = new IntersectionObserver(handleDate, {threshold: [0,1]})
-// dates.forEach(i => {
-//  observer.observe(i);
-// })
 
 function randomColor() {
     colors = ["#c6855d", "#909c98","#d4964f","#e8955d"];
