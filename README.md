@@ -9,12 +9,12 @@ Dataset: [Death by Horsekick](https://books.google.com/books?id=dh24EaSrmBkC&pg=
 [Live Preview](http://www.priyamisner.com/viz/poisson/index.html)   
 
 ## Viz 002: Green Eggs and Ham: The Tree Diagram
-<img src="./img/greeneggs.png" width="400" />  
+<a href="http://www.priyamisner.com/viz/greeneggs/index.html"><img src="./img/greeneggs.png" width="400" />  </a>
 Visualization: interactive radial tree diagram  
 Tools: d3.js, python, anytree   
-Dataset: Words of Green Eggs and Ham by Dr. Seuss \
+Dataset: Words of Green Eggs and Ham by Dr. Seuss
 [Live Preview](http://www.priyamisner.com/viz/greeneggs/index.html)  
-
+<a href="http://www.priyamisner.com/viz/greeneggs/index.html">Live Preview</a>
 ## Viz 003: All My Goldens: a timeline of foster dogs
 Visualization: scrolling web page  
 Tools: vanilla javascript  
