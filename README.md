@@ -1,4 +1,4 @@
-# 100 days of visualization: a pandemic project
+# Days of visualization: a pandemic project
   In the spirit of other 100 days challenges, I will be committing an hour a day to creating data visualizations from data sets that catch my eye. Completed visualizations are summarized below with links to the live version.  
 
 ## Viz 001: Prussian Soldiers and the Poisson Distibution 
